@@ -1,7 +1,245 @@
 *{
+    box-sizing: border-box;
     margin: 0%;
     padding: 0%;
     overflow-x: hidden;
-    box-sizing: border-box;
     font-size: 14px;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 20% auto 20%;
+    max-width: 1800px;
+    margin: auto;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+
+/************************/
+/***** Header Start *****/
+/************************/
+
+header{
+    grid-column: 1/span 12;
+    background-color: rgb(83, 83, 83);
+}
+
+#site-navbar{
+    padding: 1%;
+    color: white;
+}
+
+#site-navbar > ul{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#site-navbar > ul .item{
+    font-size: 1.2rem;
+    margin-right: 1%;
+}
+
+#site-navbar > ul .item:nth-last-child(2){
+    margin-left: auto;
+    margin-right: 0%;
+}
+
+#site-navbar > ul .item:nth-last-child(1)::before{
+    content: "|";
+    margin: 0px 10px;
+}
+
+#site-navbar > ul .item:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+#site-navbar > ul .item:nth-last-child(1):hover::before{
+    color: white;
+}
+
+/**********************/
+/***** Header End *****/
+/**********************/
+
+/**************************************************************/
+
+/**********************/
+/***** Main Start *****/
+/**********************/
+
+main{
+    grid-column: 1/span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+}
+
+#body-menu{
+    grid-column: 1/span 2;
+    grid-row: 1/-1;
+    background-color: gray;
+    padding: 2%;
+    color: wheat;
+}
+
+#body-menu > #menu-list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#body-content{
+    grid-column: 3/-1;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content-section{
+    margin-top: 2%;
+}
+
+.content-section > h2{
+    margin-bottom: 1%;
+}
+
+#body-articles{
+    padding: 5%;
+    grid-column: 3/-1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#body-articles > .article{
+    width: 200px;
+    height: 200px;
+    margin-top: 1%;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**********************/
+/*****  Main End  *****/
+/**********************/
+
+/**************************************************************/
+
+/**************************/
+/*****  Footer Start  *****/
+/**************************/
+
+footer{
+    grid-column: 1/span 12;
+    background-color: rgb(87, 87, 87);
+    text-align: center;
+    color: white;
+    padding: 1%;
+}
+
+/************************/
+/*****  Footer End  *****/
+/************************/
+
+/**************************************************************/
+
+/**************************/
+/*****  Media Quries  *****/
+/**************************/
+
+@media screen and (max-width : 850px) {
+    #body-menu{
+        grid-column: 1/span 4;
+    }
+
+    #body-content{
+        grid-column: 5/-1;
+    }
+
+    #body-articles{
+        grid-column: 5/-1;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    p{
+        margin-top: 2%;
+        font-size: 1.5rem;
+    }
+    
+    h2{
+        font-size: 2rem;
+        margin-top: 10%;
+    }
+
+    /***** Header Start *****/
+
+    #site-navbar > ul{
+        flex-direction: column;
+    }
+    
+    #site-navbar > ul .item{
+        font-size: 1.3rem;
+        margin: 1% 0%;
+        border: 1px solid white;
+        border-radius: 100px;
+        padding: 2%;
+        width: 80%;
+        text-align: center;
+    }
+    
+    #site-navbar > ul .item:nth-last-child(2){
+        margin-left: 0%;
+    }
+    
+    #site-navbar > ul .item:nth-last-child(1)::before{
+        content: "";
+        margin: 0px 0px;
+    }
+
+    /***** Header End *****/
+
+    /***** Main Start *****/
+
+    #body-menu{
+        display: none;
+    }
+
+    #body-content{
+        grid-column: 1/span 12;
+    }
+
+    #body-articles{
+        grid-column: 1/span 12;
+    }
+
+    #body-articles > .article{
+        width: 400px;
+        height: 400px;
+    }
+
+    /***** Main End *****/
+
+    /***** Footer Start *****/
+
+    footer{
+        padding: 3%;
+    }
 }
